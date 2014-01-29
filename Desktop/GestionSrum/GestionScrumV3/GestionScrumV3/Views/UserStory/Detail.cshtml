@@ -1,0 +1,55 @@
+﻿@model GestionScrumV3.Models.UserStoryViewModel
+
+@{
+    ViewBag.Title = "User Story Detail";
+}
+
+<fieldset>
+    <legend>User Story</legend>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, new { @class = "control-label" }) : 
+        @Html.DisplayFor(model => model.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, new { @class = "control-label" }) : 
+        @Html.DisplayFor(model => model.Description, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Started, new { @class = "control-label" }) : 
+        @Html.DisplayFor(model => model.Started, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Priority, new { @class = "control-label" }) : 
+        @Html.DisplayFor(model => model.Priority, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Complexity, new { @class = "control-label" }) : 
+        @Html.DisplayFor(model => model.Complexity, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.NumberOfHours, new { @class = "control-label" }) : 
+        @Html.DisplayFor(model => model.NumberOfHours, new { @class = "form-control" })
+    </div>
+</fieldset>
+<fieldset>
+    <h3>User Story Validations</h3>
+    @foreach (var item in Model.Validations)
+    {
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => item.Title, new { @class = "control-label" }) : 
+            @Html.DisplayFor(model => item.Title, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => item.Description, new { @class = "control-label" }) : 
+            @Html.DisplayFor(model => item.Description, new { @class = "form-control" })
+        </div>
+    }
+</fieldset>     
+           
+ @Html.ActionLink("retour au Product BackLog", "Index", "UserStory") 

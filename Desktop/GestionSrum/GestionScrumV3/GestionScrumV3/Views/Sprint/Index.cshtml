@@ -1,0 +1,215 @@
+﻿@model GestionScrumV3.Models.SprintViewModel
+
+@{
+    ViewBag.Title = "Sprint View";
+}
+
+<div id='wrap'>
+    <div id='calendar'></div>
+    <div style='clear:both'></div>
+</div>
+
+@section resume{
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p><b>Project : </b> @Model.Project.Name</p>
+            <p><b>Role : </b> @Model.CurrentUser.Function.Name</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default" id="CreateSprintContainer">
+        <div class="panel-heading">
+            <h4 style="text-align:center;margin-bottom: 0;margin-top: 0;">Create Sprint</h4>
+        </div>
+        <div class="panel-body"  style="margin-left: 15px;margin-right: 15px;">       
+            @using (Ajax.BeginForm("CreateSprint", "Sprint", FormMethod.Post, new AjaxOptions()
+            {
+                UpdateTargetId = "calendar",
+                InsertionMode = InsertionMode.Replace,
+                OnSuccess = "$('#calendar').fullCalendar('refetchEvents');"
+            }, new { @class = "form-horizontal", @role = "form", @id = "CreateSprintForm" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Title, new { @class="form-control" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StartDate, new { @class = "control-label" })
+                    <div class="input-group date">
+                        <input type="text" class="form-control" name="StartDate" data-val-required="Start date field is mandatory !" data-val="true"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        <span class="field-validation-valid help-inline" data-valmsg-replace="true" data-valmsg-for="StartDate"></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.StartDate)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SprintPlanningTime, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.SprintPlanningTime, new Dictionary<string, object>() { 
+                        { "class", "form-control span2 slider"}, {"data-slider-min", "5"}, 
+                        {"data-slider-max","240"}, {"data-slider-step","5"}, {"data-slider-value","5"},
+                        {"data-slider-orientation","horizontal"}, {"data-slider-selection","after"}, 
+                        {"data-slider-tooltip","show"}})
+                    <div style="display: inline-block;width: 7%"> Min</div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DailyScrumTime, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.DailyScrumTime, new Dictionary<string, object>() { 
+                        { "class", "form-control span2 slider"}, {"data-slider-min", "5"}, 
+                        {"data-slider-max","30"}, {"data-slider-step","5"}, {"data-slider-value","5"},
+                        {"data-slider-orientation","horizontal"}, {"data-slider-selection","after"}, 
+                        {"data-slider-tooltip","show"}})
+                    <div style="display: inline-block;width: 7%"> Min</div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SprintReviewTime, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.SprintReviewTime, new Dictionary<string, object>() { 
+                        { "class", "form-control span2 slider"}, {"data-slider-min", "5"}, 
+                        {"data-slider-max","120"}, {"data-slider-step","5"}, {"data-slider-value","5"},
+                        {"data-slider-orientation","horizontal"}, {"data-slider-selection","after"}, 
+                        {"data-slider-tooltip","show"}})
+                    <div style="display: inline-block;width: 7%"> Min</div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SprintRetrospectiveTime, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.SprintRetrospectiveTime, new Dictionary<string, object>() { 
+                        { "class", "form-control span2 slider"}, {"data-slider-min", "5"}, 
+                        {"data-slider-max","90"}, {"data-slider-step","5"}, {"data-slider-value","5"},
+                        {"data-slider-orientation","horizontal"}, {"data-slider-selection","after"}, 
+                        {"data-slider-tooltip","show"}})
+                    <div style="display: inline-block;width: 7%"> Min</div>
+                </div>
+            
+                <div class="form-group">
+                     @Html.ValidationMessageFor(model => model.Error)
+                </div>
+                
+                @Html.HiddenFor(x=>x.Project.ProjectId)
+                @Html.HiddenFor(x=>x.CurrentUser.UserId)
+                @Html.HiddenFor(x=>x.SprintDurationInDays)
+                
+                <button type="submit" style="width:100%;" onclick="bootstrapValidate('CreateSprintForm');" class="btn btn-primary">Add Sprint</button>
+            }
+        </div>
+    </div>
+}
+
+@section Scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'month',
+                columnFormat: {
+                    month: 'dddd',    // Monday, Wednesday, etc
+                    week: 'dddd, MMM dS', // Monday 9/7
+                    day: 'dddd, MMM dS'  // Monday 9/7
+                },
+                viewRender: function (view, element) {
+                    var notWorkingDay;
+                    $.ajax({
+                        url: 'GetNotWorkingDaysBetweenTwoDate',
+                        data: {
+                            startDate: Math.round(view.start.getTime() / 1000),
+                            endDate: Math.round(view.end.getTime() / 1000)
+                        },
+                        success: function (result) {
+                            $.each(result, function (key, value) {
+                                $("[data-date='" + value + "']").addClass("notWorkingDay");
+                            });
+                        }
+                    });
+                },
+                eventSources:
+                [
+                    {
+                       events: function (start, end, callback) {
+                           $.ajax({
+                               url: 'GetSprints',
+                               data: {
+                                   startDate: Math.round(start.getTime() / 1000),
+                                   endDate: Math.round(end.getTime() / 1000)
+                               },
+                               success: function (doc) {
+                                   var events = [];
+                                   $(doc).each(function () {
+                                       events.push({
+                                           title: $(this).attr('title'),
+                                           end: $(this).attr('end'),
+                                           start: $(this).attr('start'),
+                                           projectId: $(this).attr('projectId'),
+                                           creatorName: $(this).attr('creatorName'),
+                                           allDay: $(this).attr('allDay'),
+                                           id: $(this).attr('id'),
+                                           className: $(this).attr('className')                                           
+                                       });
+                                   });
+                                   callback(events);
+                               }
+                           });
+                       },
+                       editable: true
+                   },
+                   {
+                       events: function (start, end, callback) {
+                            $.ajax({
+                                url: 'GetMeeting',
+                                data: {
+                                    startDate: Math.round(start.getTime() / 1000),
+                                    endDate: Math.round(end.getTime() / 1000)
+                                },
+                                success: function (doc) {
+                                    var events = [];
+                                    $(doc).each(function () {
+                                        events.push({
+                                            title: $(this).attr('title'),
+                                            end: $(this).attr('end'),
+                                            start: $(this).attr('start'),
+                                            projectId: $(this).attr('projectId'),
+                                            allDay: $(this).attr('allDay'),
+                                            id: $(this).attr('id'),
+                                            className: $(this).attr('className')
+                                        });
+                                    });
+                                    callback(events);
+                                }
+                            });
+                       },
+                       editable: false
+                   }
+                ],
+                eventClick: function (calEvent, jsEvent, view) {
+                    window.location = "/ScrumBoard/Index?sprintId=" + calEvent.id
+                }
+            });
+
+            $('#CreateSprintContainer .input-group.date').datepicker({
+                format: "dd/mm/yyyy",
+                weekStart: 1,
+                todayBtn: "linked",
+                language: "fr",
+                multidate: false,
+                daysOfWeekDisabled: "0,6",
+                calendarWeeks: true,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('.slider').slider();
+        });
+    </script>
+}

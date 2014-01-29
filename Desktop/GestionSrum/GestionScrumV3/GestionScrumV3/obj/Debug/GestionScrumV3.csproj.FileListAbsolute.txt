@@ -1,0 +1,157 @@
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\GestionScrumV3.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\GestionScrumV3.pdb
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Antlr3.Runtime.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\EntityFramework.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.Infrastructure.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Newtonsoft.Json.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Net.Http.Formatting.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.WebHost.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Mvc.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Optimization.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Providers.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Razor.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Deployment.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Razor.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\WebGrease.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\EntityFramework.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Newtonsoft.Json.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Net.Http.Formatting.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.WebHost.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Mvc.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.Razor.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Deployment.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Razor.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.pdb
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\WebMatrix.Data.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\WebMatrix.WebData.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\WebMatrix.Data.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\WebMatrix.WebData.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.Core.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Org.Mentalis.Security.Cryptography.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Mono.Math.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.Core.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Org.Mentalis.Security.Cryptography.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\Mono.Math.xml
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\MySql.Data.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\MySql.Web.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.AspNet.dll
+D:\ESGI\5 AL\ProjetDotNet\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\GestionScrumV3.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\GestionScrumV3.pdb
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Antlr3.Runtime.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.Core.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\EntityFramework.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Newtonsoft.Json.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Net.Http.Formatting.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.WebHost.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Mvc.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Optimization.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Providers.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Razor.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebGrease.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.Data.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.WebData.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Mono.Math.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.Core.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\EntityFramework.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Newtonsoft.Json.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Net.Http.Formatting.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.WebHost.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Mvc.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Razor.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.Data.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.WebData.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Mono.Math.xml
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.dll
+C:\Users\Ybondeau\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.pdb
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\GestionScrumV3.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\GestionScrumV3.pdb
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Antlr3.Runtime.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.Core.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\EntityFramework.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\MySql.Data.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\MySql.Web.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Newtonsoft.Json.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Net.Http.Formatting.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.WebHost.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Mvc.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Optimization.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Providers.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Razor.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Razor.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebGrease.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.Data.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.WebData.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Mono.Math.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.Core.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\EntityFramework.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Newtonsoft.Json.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Net.Http.Formatting.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Http.WebHost.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Mvc.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.Razor.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\System.Web.WebPages.Razor.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.Data.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\WebMatrix.WebData.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Mono.Math.xml
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.dll
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.pdb

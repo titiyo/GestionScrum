@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/bootstrapcss")
+    @Styles.Render("~/Content/sitecss")
+    @Styles.Render("~/Content/fullcalendarcss")
+    @Styles.Render("~/Content/datepickercss")
+    @Styles.Render("~/Content/splidercss")
+</head>
+<body>
+    <header class="navbar  navbar-default navbar-fixed-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home/index">Gestion SCRUM</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                @Html.Partial("_MenuPartial")
+            </nav>
+        </div>
+    </header>
+    <div class="container bs-docs-container" style="padding-top:70px;">
+        <div style="margin-right: 4%; position: relative; width: 19%; float: left;">
+            @RenderSection("resume", required: false)
+        </div>
+        <div style="position: relative; width: 75%; float: right;">
+            @RenderBody()
+        </div>
+
+    </div>
+      
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrapjs")
+    @Scripts.Render("~/bundles/bootstrapval")
+    @Scripts.Render("~/bundles/fullcalendar") 
+    @Scripts.Render("~/bundles/datepickerjs") 
+    @Scripts.Render("~/bundles/sliderjs") 
+
+    @RenderSection("Scripts", required: false) 
+
+    </body>
+</html>

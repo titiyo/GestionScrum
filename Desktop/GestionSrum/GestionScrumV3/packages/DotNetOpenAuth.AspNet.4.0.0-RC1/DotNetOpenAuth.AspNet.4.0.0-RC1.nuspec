@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>DotNetOpenAuth.AspNet</id>
+    <version>4.0.0-RC1</version>
+    <title>DotNetOpenAuth extensions for ASP.NET (WebPages)</title>
+    <authors>Luan Nguyen</authors>
+    <owners>Luan Nguyen</owners>
+    <licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
+    <projectUrl>http://www.dotnetopenauth.net/</projectUrl>
+    <iconUrl>https://github.com/AArnott/dotnetopenid/raw/v3.4/doc/logo/dnoa-logo_32x32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Allows adding OAuth and OpenID authentication to ASP.NET web projects using DotNetOpenAuth implementation.</description>
+    <dependencies>
+      <dependency id="DotNetOpenAuth.OpenId.RelyingParty" version="[4.0.0-RC1]" />
+      <dependency id="DotNetOpenAuth.OAuth.Consumer" version="[4.0.0-RC1]" />
+    </dependencies>
+  </metadata>
+</package>

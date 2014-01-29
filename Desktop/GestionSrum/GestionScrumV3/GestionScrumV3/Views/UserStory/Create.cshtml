@@ -1,0 +1,174 @@
+﻿@model GestionScrumV3.Models.UserStoryViewModel
+
+@{
+    ViewBag.Title = "Create User Story";
+}
+
+@using (Html.BeginForm("Create", "UserStory", FormMethod.Post, new { @class = "form-horizontal", @role = "form", @id = "UserStoryForm" }))
+{
+
+   @Html.ValidationSummary(true) 
+
+    <fieldset style="width:50%;">
+        <legend>Create a new User Story</legend>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Title, new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="form-group">
+            <p><b>Description sous la forme : </b> <i> En tant que (qui), je veux (quoi) afin de (pourquoi)</i></p>
+            @Html.LabelFor(model => model.AsARole, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.AsARole, new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.AsARole)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IWantGoalOrDesire, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.IWantGoalOrDesire, new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.IWantGoalOrDesire)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SoThatBenefit, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.SoThatBenefit, new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.SoThatBenefit)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Priority, new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.Priority, Model.Priorities, new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.Priority)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Complexity, new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.Complexity, Model.Complexities, new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.Complexity)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberOfHours, new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.NumberOfHours, Model.Hours, new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.NumberOfHours)
+        </div>
+    </fieldset>
+    
+    <fieldset style="width:50%;">
+        <legend>User Story Validations</legend>
+        <table id="UserStoryValidation">
+            <tbody>
+            </tbody>
+        </table>
+ 
+        <button type="button" onclick="addValidation();" class="btn btn-default" style="margin-bottom: 18px; margin-left: 15%;">Add Validation</button>
+        <button type="button" onclick="removeLastValidation();" class="btn btn-default" style="margin-bottom: 18px; margin-left: 10px;">Remove last Validation</button>
+    </fieldset>
+
+    @Html.HiddenFor(x=>x.ProjectId)
+    
+    <button type="submit" onclick="bootstrapValidate('UserStoryForm');" class="btn btn-default">Create</button>
+    @Html.ActionLink("retour au dashboard", "Index", "Dashboard") 
+    
+}
+
+@section Scripts{
+     <script type="text/javascript">
+         $(function () {
+             addValidation();
+         });
+
+         function addValidation() {
+             var table = document.getElementById("UserStoryValidation").tBodies[0];
+
+             var line = table.children.length;
+
+             // Create a new tr
+             var tr = document.createElement("tr");
+
+             // Create  TD
+             var td = document.createElement("td");
+
+             // Create HR
+             var hr = document.createElement("hr");
+             td.appendChild(hr);
+
+             // Title
+             var divTitle = document.createElement("div");
+             divTitle.setAttribute("class", "form-group");
+
+             var labelTitle = document.createElement("label");
+             labelTitle.setAttribute("class", "control-label");
+             labelTitle.setAttribute("for", "Validations_" + line + "__Title");
+             labelTitle.innerHTML = "Title";
+
+             var inputTitle = document.createElement("input");
+             inputTitle.setAttribute("id", "Validations_" + line + "__Title");
+             inputTitle.setAttribute("class", "form-control");
+             inputTitle.setAttribute("type", "text");
+             inputTitle.setAttribute("value", "");
+             inputTitle.setAttribute("name", "Validations[" + line + "].Title");
+
+             var spanValidationTitle = document.createElement("span");
+             spanValidationTitle.setAttribute("class", "field-validation-valid help-inline");
+             spanValidationTitle.setAttribute("data-valmsg-replace", "true");
+             spanValidationTitle.setAttribute("data-valmsg-for", "Validations[" + line + "].Title");
+             spanValidationTitle.setAttribute("class", "field-validation-valid help-inline");
+
+             divTitle.appendChild(labelTitle);
+             divTitle.appendChild(inputTitle);
+             divTitle.appendChild(spanValidationTitle);
+
+             // Create Description 
+
+             var divDesc = document.createElement("div");
+             divDesc.setAttribute("class", "form-group");
+
+             var labelDesc = document.createElement("label");
+             labelDesc.setAttribute("class", "control-label");
+             labelDesc.setAttribute("for", "Validations_" + line + "__Description");
+             labelDesc.innerHTML = "Description";
+
+             var inputDesc = document.createElement("input");
+             inputDesc.setAttribute("id", "Validations_" + line + "__Description");
+             inputDesc.setAttribute("class", "form-control");
+             inputDesc.setAttribute("type", "text");
+             inputDesc.setAttribute("value", "");
+             inputDesc.setAttribute("name", "Validations[" + line + "].Description");
+
+             var spanValidationDesc = document.createElement("span");
+             spanValidationDesc.setAttribute("class", "field-validation-valid help-inline");
+             spanValidationDesc.setAttribute("data-valmsg-replace", "true");
+             spanValidationDesc.setAttribute("data-valmsg-for", "Validations[" + line + "].Description");
+             spanValidationDesc.setAttribute("class", "field-validation-valid help-inline");
+
+             divDesc.appendChild(labelDesc);
+             divDesc.appendChild(inputDesc);
+             divDesc.appendChild(spanValidationDesc);
+
+             // Add div in the TD
+             td.appendChild(divTitle);
+             td.appendChild(divDesc);
+
+             // ADD  TD in the TR
+             tr.appendChild(td);
+
+             // Add Td in the Table
+             table.appendChild(tr);
+             
+         }
+    
+         function removeLastValidation()
+         {
+             var table = document.getElementById("UserStoryValidation").tBodies[0];
+
+             var line = table.children.length;
+
+             if (line > 1) {
+                 var lastChild = table.children[--line];
+                 table.removeChild(lastChild);
+             }
+         }
+
+    </script>
+}
+

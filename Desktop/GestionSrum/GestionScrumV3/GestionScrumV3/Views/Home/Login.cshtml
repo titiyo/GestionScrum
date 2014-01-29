@@ -1,0 +1,24 @@
+﻿@model GestionScrumV3.Models.LoginViewModel
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post, new {@role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="inputUserName">Login</label>
+        <div>
+            <input type="text" class="form-control" id="inputUserName3" placeholder="User Name" name="login">
+        </div>
+    </div> 
+    <div class="form-group">
+        <label for="inputPassword3">Password</label>
+        <div>
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Sign in</button>
+        </div>
+    </div>
+    
+}

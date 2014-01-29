@@ -1,0 +1,33 @@
+﻿@model GestionScrumV3.Entity.UserStory
+
+<div class="userStory" userStoryId="@Model.UserStoryId" style="height:auto;width: 185px;">
+    <div class="userStoryHeader" style="padding-bottom: 20px;">
+        <div class="left">
+            <b>@Model.Title</b>
+        </div>
+        <div class="right">
+            @Html.ActionLink("Edit", "EditUserStory","ScrumBoard", new { @userStoryId = Model.UserStoryId }, null) 
+        </div>
+    </div>
+    <hr style="margin: 0;padding: 0;"/>
+    <div class="userStoryBody">
+        @Model.Description
+        <hr style="margin: 0;padding-bottom: 5px;"/>
+        <p>Assigned to : @if(Model.Assigned != null){<span>@Model.Assigned.FirstName @Model.Assigned.LastName</span>}</p>
+        <span>Progress : @Model.PercentageOfProgress %</span>
+        <div class="progress" style="height:15px;padding-bottom:0px;">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@Model.PercentageOfProgress" aria-valuemin="0" aria-valuemax="100" style="width: @Model.PercentageOfProgress%">
+            <span class="sr-only">@Model.PercentageOfProgress% Complete</span>
+          </div>
+        </div>
+    </div>
+    <hr style="margin: 0;padding: 0;"/>
+    <div class="userStoryFooter" style="padding-top: 3px;">
+        <div class="left">
+            @Model.Priority
+        </div>
+        <div class="right">
+            @Model.Complexity
+        </div>
+    </div>
+</div>

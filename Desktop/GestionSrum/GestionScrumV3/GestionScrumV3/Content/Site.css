@@ -1,0 +1,151 @@
+﻿.ui-widget-content {
+    background-color: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    color: #222222;
+}
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 1.1em;
+}
+.ui-menu {
+    display: block;
+    list-style: none outside none;
+    margin: 0;
+    outline: medium none;
+    padding: 2px;
+}
+.ui-menu a{
+    color: #000;
+}
+
+.ui-autocomplete {
+    cursor: default;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+/* User Story */
+
+.userStory
+{
+    background: linear-gradient(#DEF8FF, #91E9FF) repeat scroll 0 0 transparent;
+    display: inline-block;
+    font-size: 11px;
+    height: 130px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    padding: 2px 5px 0;
+    width: 150px;
+}
+
+.userStoryHeader
+{
+    height: 15%;
+}
+
+.userStoryFooter
+{
+    height: 15%;
+}
+
+.userStoryBody
+{
+    height: 70%;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+#UserStoryValidation
+{
+    width: 100%;
+}
+
+
+.notWorkingDay
+{
+    background-color: #F5F5F5;
+}
+
+.field-validation-error
+{
+    color: #A94442;
+}
+
+/*http://www.colorhexa.com*/
+
+.Sprint_event
+{
+    background-color: #7e9ae9 !important;
+    border-color: #3d67de !important;
+}
+
+.SprintPlanningTime_event
+{
+    background-color: #9ae97e !important;
+    border-color: #67de3d !important;
+}
+
+.DailyScrumTime_event
+{
+    background-color: #e97e9a !important;
+    border-color: #de3d67 !important;
+}
+
+.SprintReviewTime_event
+{
+    background-color: #cd7ee9 !important;
+    border-color: #b43dde !important;
+}
+
+.SprintRetrospectiveTime_event
+{
+    background-color: #e9987e !important;
+    border-color: #de643d !important;
+}
+
+
+.scrumBoard table
+{
+    width: 99%;
+    margin-top: 20px;
+}
+
+.scrumBoard table th
+{
+    text-align: center !important;
+}
+
+.scrumBoard table tbody tr
+{
+    height:500px;
+}
+
+#toDoCol .userStory
+{
+    margin: 10px;
+}
+
+#inProgressCol .userStory
+{
+    margin: 10px;
+}
+
+#toVerifyCol .userStory
+{
+    margin: 10px;
+}
+
+#doneCol .userStory
+{
+    margin: 10px;
+}
+

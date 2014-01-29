@@ -1,0 +1,255 @@
+﻿@model GestionScrumV3.Models.ScrumBoardViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="scrumBoard" style="display:block;padding-left: 15px;">
+    <div>
+        <div style="display:inline-block;padding-left: 5%;">
+            @Html.LabelFor(x=>x.SprintId)
+        </div>
+        <div style="display:inline-block;">
+            @Html.DropDownListFor(x => x.SprintId, Model.Sprints, new { @onchange = "ChangeSprint(this);" })
+        </div>
+        <div style="display:inline-block;padding-left: 5%;">
+            @Html.LabelFor(x=>x.SprintStartDate)
+            : @Model.SprintStartDate.ToShortDateString()
+        </div>
+        <div style="display:inline-block;padding-left: 5%;">
+            @Html.LabelFor(x=>x.SprintEndDate)
+             : @Model.SprintEndDate.ToShortDateString()
+        </div>
+    </div>
+    <div class="scrumBoard fc">
+        <table class="fc-border-separate" cellspacing="0" style="width:100%">
+            <thead class="fc-state-default">
+                <tr class="fc-first fc-last" style="width:25%;">
+                    <th class="fc-widget-header fc-first">
+                        To Do 
+                    </th>
+                    <th class="fc-widget-header" style="width:25%;">
+                        In Progress
+                    </th>
+                    <th class="fc-widget-header" style="width:25%;">
+                        To Verify 
+                    </th>
+                    <th class="fc-widget-header fc-last" style="width:25%;">
+                        Done
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="fc-first fc-last ui-droppable">
+                    <td class="fc-widget-content fc-first" id="toDoCol"> 
+                        @foreach(var item in Model.ToDo)
+                        {
+                            @Html.Partial("_UserStoryScrumBoardPartial", item)
+                        }
+                    </td>
+                    <td class="fc-widget-content" id="inProgressCol">
+                        @foreach(var item in Model.InProgress)
+                        {
+                            @Html.Partial("_UserStoryScrumBoardPartial", item)
+                        }
+                    </td>
+                    <td class="fc-widget-content" id="toVerifyCol">
+                        @foreach(var item in Model.ToVerify)
+                        {
+                            @Html.Partial("_UserStoryScrumBoardPartial", item)
+                        }
+                    </td>
+                    <td class="fc-widget-content fc-last" id="doneCol">
+                        @foreach(var item in Model.Done)
+                        {
+                            @Html.Partial("_UserStoryScrumBoardPartial", item)
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section resume{
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p><b>Project : </b> @Model.Project.Name</p>
+            <p><b>Role : </b> @Model.CurrentUser.Function.Name</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">User Story <span style="float:right">@Html.ActionLink("+++", "Create", "UserStory", new { @ProjectId = Model.Project.ProjectId }, null)</span></div>
+        <div class="panel-body" id="userStory">
+            @if (Model.UserStories != null)
+            {
+                <ul style="padding-left:10px;">
+                    @foreach (var item in Model.UserStories)
+                    {
+                        <li userStoryId="@item.UserStoryId">@Html.ActionLink(item.Title, "Detail","UserStory", new { @userStoryId = item.UserStoryId}, null)</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+}
+
+@section Scripts{
+     <script type="text/javascript">
+
+         function ChangeSprint(data) {
+             $.ajax({
+                 url: 'ChangeSprint',
+                 dataType: 'json',
+                 data: {
+                     sprintId: data.value
+                 },
+                 success: function (html) {
+                     $("#scrumBoard")[0].innerHTML = html;
+                 }
+             });
+         }
+
+         $(function () {
+             $('#userStory li').draggable(
+             {
+                 helper: "clone"
+             });
+
+            $('#toDoCol .userStory').draggable(
+            {
+                helper: "clone"
+            });
+
+            $('#inProgressCol .userStory').draggable(
+            {
+                helper: "clone"
+            });
+
+            $('#toVerifyCol .userStory').draggable(
+            {
+                helper: "clone"
+            });
+
+             $('#toDoCol').droppable(
+             {
+                 accept: "#userStory li",
+                 drop: function (ev, ui) {
+                     if ($('#toDoCol')[0].childElementCount >= 4) {
+                         alert("This column is full ! (4 User Story maximum)");
+                     }
+                     else {
+                         $("#userStory")[0].firstElementChild.removeChild(ui.draggable[0]);
+                         $.ajax({
+                             url: 'CreateUserStoryNote',
+                             dataType: 'json',
+                             data: {
+                                 userStoryId: ui.helper[0].attributes["userStoryId"].value
+                             },
+                             success: function (html) {
+                                 $("#toDoCol")[0].innerHTML += html;
+
+                                 $('#toDoCol .userStory').draggable(
+                                 {
+                                     helper: "clone"
+                                 });
+
+                                 $.ajax({
+                                     url: 'UpdateUserStory',
+                                     dataType: 'json',
+                                     data: {
+                                         userStoryId: ui.helper[0].attributes["userStoryId"].value,
+                                         userStoryStatus: "ToDo",
+                                         sprintId: "@(Model.SprintId)"
+                                     }
+                                 });
+                             }
+                         });
+                     }
+                 }
+             });
+
+             $('#inProgressCol').droppable(
+             {
+                 accept: "#toDoCol .userStory",
+                 drop: function (ev, ui) {
+                     if ($('#inProgressCol')[0].childElementCount >= 4)
+                     {
+                         alert("This column is full ! (4 User Story maximum)");
+                     }
+                     else
+                     {
+                        var clone = ui.draggable.clone();
+                        $("#inProgressCol")[0].appendChild(clone[0]);
+                        $('#toDoCol')[0].removeChild(ui.draggable[0])
+
+                        $('#inProgressCol .userStory').draggable(
+                        {
+                            helper: "clone"
+                        });
+
+                        $.ajax({
+                            url: 'UpdateUserStoryStatus',
+                            dataType: 'json',
+                            data: {
+                                userStoryId: ui.helper[0].attributes["userStoryId"].value,
+                                userStoryStatus: "InProgress"
+                            }
+                        });
+                     }
+                }
+            });
+
+            $('#toVerifyCol').droppable(
+            {
+                accept: "#inProgressCol .userStory",
+                drop: function (ev, ui) {
+                    if ($('#toVerifyCol')[0].childElementCount >= 4) {
+                        alert("This column is full ! (4 User Story maximum)");
+                    }
+                    else {
+                        var clone = ui.draggable.clone();
+                        $("#toVerifyCol")[0].appendChild(clone[0]);
+                        $('#inProgressCol')[0].removeChild(ui.draggable[0])
+
+                        $('#toVerifyCol .userStory').draggable(
+                        {
+                            helper: "clone"
+                        });
+
+                        $.ajax({
+                            url: 'UpdateUserStoryStatus',
+                            dataType: 'json',
+                            data: {
+                                userStoryId: ui.helper[0].attributes["userStoryId"].value,
+                                userStoryStatus: "ToVerify"
+                            }
+                        });
+                    }
+                }
+            });
+
+            $('#doneCol').droppable(
+            {
+                accept: "#toVerifyCol .userStory",
+                drop: function (ev, ui) {
+                    var clone = ui.draggable.clone();
+                    $("#doneCol")[0].appendChild(clone[0]);
+                    $('#toVerifyCol')[0].removeChild(ui.draggable[0]);
+
+                    $.ajax({
+                        url: 'UpdateUserStoryStatus',
+                        dataType: 'json',
+                        data: {
+                            userStoryId: ui.helper[0].attributes["userStoryId"].value,
+                            userStoryStatus: "Done"
+                        }
+                    });
+                }
+            });
+         });
+    </script>
+}

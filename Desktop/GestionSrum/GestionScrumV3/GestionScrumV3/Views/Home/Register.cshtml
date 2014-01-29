@@ -1,0 +1,70 @@
+﻿@model GestionScrumV3.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Inscription";
+}
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post, new {@class = "form-horizontal", @role = "form", @id="CreateUserForm" }))
+{
+
+   @Html.ValidationSummary(true) 
+
+    <fieldset>
+        <legend>Inscription</legend>
+
+        <div style="width:50%;">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Login, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.Login, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.Login)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, new { @class = "control-label" })
+                @Html.PasswordFor(model => model.Password, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PasswordConfirmed, new { @class = "control-label" })
+                @Html.PasswordFor(model => model.PasswordConfirmed, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.PasswordConfirmed)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.FirstName, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.LastName, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.Email, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.PhoneNumber)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FunctionId, new { @class = "control-label" })
+                @Html.DropDownListFor(model => model.FunctionId, Model.Functions, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.FunctionId)
+            </div>
+            
+
+            <button type="submit" onclick="bootstrapValidate('CreateUserForm');" class="btn btn-default">Create</button>
+            @Html.ActionLink("retour à l'index", "Index", "Home")    
+        </div>
+    </fieldset>
+}

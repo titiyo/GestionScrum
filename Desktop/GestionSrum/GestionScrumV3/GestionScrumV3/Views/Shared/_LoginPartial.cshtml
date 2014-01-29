@@ -1,0 +1,25 @@
+﻿@if (Request.IsAuthenticated) {
+    <ul class="nav navbar-nav navbar-right">        
+        <li>
+            <a href="/Home/Logout">Log off</a>
+        </li>
+        <li class="divider-vertical"></li>
+        <li>
+            <p style="color: #999999;padding-top: 15px;">
+                Bonjour @User.Identity.Name
+            </p>
+        </li>
+    </ul>
+} else {
+    <ul class="nav navbar-nav navbar-right">        
+        <li>@Html.ActionLink("Inscrivez-vous", "Register", "Home")</li>
+        <li class="divider-vertical"></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Connexion<strong class="caret"></strong></a>
+            <div class="dropdown-menu" style="padding-left: 15px; padding-right: 15px;width: 250px; padding-top: 10px;">
+                @Html.Partial("~/Views/Home/Login.cshtml", new GestionScrumV3.Models.LoginViewModel())    
+            </div>
+        </li>
+    </ul>
+}
+

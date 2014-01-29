@@ -1,0 +1,43 @@
+﻿@model GestionScrumV3.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "Edit Project";
+}
+
+@using (Html.BeginForm("Edit", "Project", FormMethod.Post, new {@class = "form-horizontal", @role = "form", @id="EditProjectForm" }))
+{
+
+   @Html.ValidationSummary(true) 
+
+    <fieldset>
+        <legend>Create Project</legend>
+
+        <div style="width:50%;">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.Name, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+                @Html.TextAreaFor(model => model.Description, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SprintDurationInDays, new { @class = "control-label" })
+                @Html.DropDownListFor(model => model.SprintDurationInDays, Model.SprintDuration, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.SprintDurationInDays)
+            </div>
+
+            @Html.HiddenFor(x=>x.CreatorId)
+            @Html.HiddenFor(x=>x.TeamId)
+            @Html.HiddenFor(x=>x.ProjectId)
+
+            <button type="submit" onclick="bootstrapValidate('EditProjectForm');" class="btn btn-default">Edit</button>
+            @Html.ActionLink("retour à l'index", "Index", "Home")    
+        </div>
+    </fieldset>
+}

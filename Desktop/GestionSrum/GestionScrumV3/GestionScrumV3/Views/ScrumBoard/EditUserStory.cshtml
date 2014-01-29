@@ -1,0 +1,59 @@
+﻿@model GestionScrumV3.Models.UserStoryScrumBoardViewModel
+
+<div class="modal fade" id="EditUserStory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Edit user story</h4>
+            </div>
+            @using (Html.BeginForm("EditUserStory", "ScrumBoard", FormMethod.Post, new { @class = "form-horizontal", @role = "form", @id = "EditUserStoryForm" }))
+            {
+                <div class="modal-body">
+                    <div class="form-group" style="padding-left: 25%;padding-right: 25%;">
+                        @Html.LabelFor(model => model.UserId, new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.UserId, Model.Users, new { @class="form-control"})
+                        @Html.ValidationMessageFor(model => model.UserId)
+                    </div>
+                     <div class="form-group" style="padding-left: 25%;padding-right: 25%;"> 
+                        @Html.LabelFor(model => model.Progress, new { @class = "control-label" })
+                         <br />
+                        @Html.TextBoxFor(model => model.Progress, new Dictionary<string, object>() { 
+                            { "class", "form-control span2 slider"}, {"data-slider-min", "0"}, 
+                            {"data-slider-max","100"}, {"data-slider-step","1"}, {"data-slider-value",Model.Progress},
+                            {"data-slider-orientation","horizontal"}, {"data-slider-selection","after"}, 
+                            {"data-slider-tooltip","show"}})
+                        <div style="display: inline-block;width: 7%;margin-left: -15px;">%</div>
+                    </div>
+                    @Html.HiddenFor(x=>x.UserStoryId)                
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit"  class="btn btn-default">Save</button>
+                </div>
+            }
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('#EditUserStory').modal('show');
+
+            $('#EditUserStory').on('hide.bs.modal', function (e) {
+                window.location = "/ScrumBoard/Index"
+            });
+
+            $("#User").autocomplete({
+                source: '/User/SearchUser',
+                minLength: 2
+            });
+
+            $('.slider').slider();
+
+            $('.slider')[0].style.width = "95%";
+        });
+
+    </script>
+}

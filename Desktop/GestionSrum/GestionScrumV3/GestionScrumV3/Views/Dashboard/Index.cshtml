@@ -1,0 +1,66 @@
+﻿@model GestionScrumV3.Models.DashboardViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+    <h3 class="panel-title">Dashboard</h3>
+    </div>
+    <div class="panel-body">
+        <div style="float:left">
+            @Html.LabelFor(x=>x.Project.Description)
+            @Html.DisplayFor(x=>x.Project.Description)
+        </div>
+        <div style="float:right;width: 50%;">
+            @Html.Label("Last Actions")
+            @foreach(var item in Model.Project.ActionLogs)
+            {
+                <br />
+                <text>@item.CreateDate (@item.User.LastName @item.User.FirstName) : @item.LogType.Name</text>
+            }
+        </div>
+    </div>
+</div>
+
+@section resume{
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p><b>Project : </b> @Model.Project.Name</p>
+            <p><b>Role : </b> @Model.CurrentUser.Function.Name</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Model.TeamName <span style="float:right">@Html.ActionLink("+++", "AddUserInTeam", "User", new { @TeamId = Model.Project.TeamId }, null)</span> </div>
+        <div class="panel-body">
+            @if (Model.Users != null)
+                {
+                <ul style="padding-left:10px;">
+                    @foreach(var item in Model.Users)
+                    {
+                        <li>@Html.ActionLink(item.ToString(), "Detail","User", new { @userId = item.UserId}, null)</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">User Story <span style="float:right">@Html.ActionLink("+++", "Create", "UserStory", new { @ProjectId = Model.Project.ProjectId }, null)</span></div>
+        <div class="panel-body">
+            @if (Model.UserStories != null)
+            {
+                <ul style="padding-left:10px;">
+                    @foreach (var item in Model.UserStories)
+                    {
+                        <li>@Html.ActionLink(item.Title, "Detail","UserStory", new { @userStoryId = item.UserStoryId}, null)</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+}

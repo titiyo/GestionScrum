@@ -1,0 +1,42 @@
+﻿<ul class="nav navbar-nav">
+    <li><a href="/Home/Index">Index</a></li>
+    @if(Request.IsAuthenticated)
+    {
+        <li class="dropdown">
+            @if (HttpContext.Current.Application.AllKeys.Contains("currentProject"))
+            {
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@(((GestionScrumV3.Entity.Project)HttpContext.Current.Application.Get("currentProject")).Name)<b class="caret"></b></a>        
+            }
+            else
+            {
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Choose Project<b class="caret"></b></a>
+            }
+            <ul class="dropdown-menu">
+                <li role="presentation" class="dropdown-header">Actions</li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Project/Create">Create Project</a></li>
+                @if (HttpContext.Current.Application.AllKeys.Contains("currentProject"))
+                {
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/Project/Edit">Edit Project</a></li>
+                }
+                <li role="presentation" class="divider"></li>
+                <li role="presentation" class="dropdown-header">My Projects</li>
+                @if (HttpContext.Current.Application.Get("projects") != null 
+                    && ((List<GestionScrumV3.Entity.Project>)HttpContext.Current.Application.Get("projects")).Count() > 0)
+                {
+                    foreach (var item in (List<GestionScrumV3.Entity.Project>)HttpContext.Current.Application.Get("projects"))
+                    {
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/Project/Select?projectId=@(item.ProjectId)">@item.Name</a></li> 
+                    }
+                }
+            </ul>
+        </li>
+        if (HttpContext.Current.Application.AllKeys.Contains("currentProject"))
+        {
+            <li><a href="/Dashboard/Index">Dashboard</a></li>
+            <li><a href="/UserStory/Index">Product Backlog</a></li>
+            <li><a href="/Sprint/Index">Sprint View</a></li>
+            <li><a href="/ScrumBoard/Index">Scrum Board</a></li>
+        }
+    }
+</ul> 
+@Html.Partial("_LoginPartial")

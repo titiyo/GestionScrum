@@ -1,0 +1,25 @@
+﻿@model GestionScrumV3.Entity.UserStory
+
+<div class="userStory">
+    <div class="userStoryHeader">
+        <div class="left">
+            <b>@Model.Title</b>
+        </div>
+        <div class="right">
+            @Html.ActionLink("Edit", "Edit", "UserStory", new { @userStoryId = Model.UserStoryId}, null) 
+        </div>
+    </div>
+    <hr style="margin: 0;padding: 0;"/>
+    <div class="userStoryBody">
+        @Model.Description
+    </div>
+    <hr style="margin: 0;padding: 0;"/>
+    <div class="userStoryFooter">
+        <div class="left">
+            @Model.Priority
+        </div>
+        <div class="right">
+            @Model.Complexity
+        </div>
+    </div>
+</div>
