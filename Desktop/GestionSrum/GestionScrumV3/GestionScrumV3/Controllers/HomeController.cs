@@ -22,7 +22,12 @@ namespace GestionScrumV3.Controllers
         public ActionResult Index()
         {
             // Get all projects 
-            HttpContext.Application.Set("projects", _context.Project.Where(x => x.UserId == WebSecurity.CurrentUserId).ToList());
+            if (HttpContext.Application.AllKeys.Contains("currentProject"))
+            {
+                HttpContext.Application.Remove("currentProject");
+            }
+
+            HttpContext.Application.Set("projects", _context.Project.Where(x => x.Team.Users.Where(y => y.UserId == WebSecurity.CurrentUserId).Count() > 0).ToList());
             return View();
         }
 

@@ -78,7 +78,7 @@ namespace GestionScrumV3.Controllers
                 }
                 else
                 {
-                    team = _context.Team.Where(x => x.TeamId == o.TeamId).FirstOrDefault();
+                    team = _context.Team.Include("Users").Where(x => x.TeamId == o.TeamId).FirstOrDefault();
                     team.Users.Add(_context.User.Where(x => x.UserId == WebSecurity.CurrentUserId).FirstOrDefault());
                 }
 
@@ -107,7 +107,7 @@ namespace GestionScrumV3.Controllers
                 _context.SaveChanges();
 
                 HttpContext.Application.Set("currentProject", project);
-                HttpContext.Application.Set("projects", _context.Project.Where(x => x.UserId == WebSecurity.CurrentUserId).ToList());
+                HttpContext.Application.Set("projects", _context.Project.Where(x => x.Team.Users.Where(y => y.UserId == WebSecurity.CurrentUserId).Count() > 0).ToList());
 
                 return RedirectToAction("Select", new { @projectId = project.ProjectId });
             }
@@ -125,7 +125,7 @@ namespace GestionScrumV3.Controllers
 
         public ActionResult Select(Guid projectId)
         {
-            HttpContext.Application.Add("currentProject", _context.Project.Where(x => x.ProjectId == projectId).FirstOrDefault());
+            HttpContext.Application.Set("currentProject", _context.Project.Where(x => x.ProjectId == projectId).FirstOrDefault());
             return RedirectToAction("Index", "Dashboard");
         }
 
@@ -169,7 +169,7 @@ namespace GestionScrumV3.Controllers
                 _context.SaveChanges();
 
                 HttpContext.Application.Set("currentProject", _context.Project.Where(x => x.ProjectId == o.ProjectId).FirstOrDefault());
-                HttpContext.Application.Set("projects", _context.Project.Where(x => x.UserId == WebSecurity.CurrentUserId).ToList());
+                HttpContext.Application.Set("projects", _context.Project.Where(x => x.Team.Users.Where(y => y.UserId == WebSecurity.CurrentUserId).Count() > 0).ToList());
 
                 return RedirectToAction("Index", "Dashboard");
             }

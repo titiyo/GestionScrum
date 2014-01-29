@@ -24,7 +24,7 @@ namespace GestionScrumV3.Controllers
                 && HttpContext.Application.AllKeys.Contains("currentProject"))
             {
                 Guid projectId = ((Project)HttpContext.Application.Get("currentProject")).ProjectId;
-                Project project = _context.Project.Include("Team.Users").Include("UserStories")
+                Project project = _context.Project.Include("Team.Users.Function").Include("UserStories")
                     .Include("ActionLogs.LogType").Where(x => x.ProjectId == projectId).FirstOrDefault();
 
                 model.Users = project.Team.Users.ToList();

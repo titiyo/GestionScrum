@@ -23,7 +23,7 @@ namespace GestionScrumV3.Controllers
             ProductBacklogViewModel model = new ProductBacklogViewModel();
 
             Guid projectId = ((Project)HttpContext.Application.Get("currentProject")).ProjectId;
-            Project project = _context.Project.Include("Team.Users").Include("UserStories").Where(x => x.ProjectId == projectId).FirstOrDefault();
+            Project project = _context.Project.Include("Team.Users.Function").Include("UserStories").Where(x => x.ProjectId == projectId).FirstOrDefault();
 
             if (project != null)
             {
