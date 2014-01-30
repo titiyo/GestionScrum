@@ -1,7 +1,7 @@
 ﻿@model GestionScrumV3.Models.ScrumBoardViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Scrum Board";
 }
 
 <div id="scrumBoard" style="display:block;padding-left: 15px;">
@@ -237,6 +237,9 @@
                 accept: "#toVerifyCol .userStory",
                 drop: function (ev, ui) {
                     var clone = ui.draggable.clone();
+                    clone[0].children[2].children[2].innerHTML = "Progress : 100 %";
+                    clone[0].children[2].lastElementChild.firstElementChild.style.width = "100%";
+
                     $("#doneCol")[0].appendChild(clone[0]);
                     $('#toVerifyCol')[0].removeChild(ui.draggable[0]);
 

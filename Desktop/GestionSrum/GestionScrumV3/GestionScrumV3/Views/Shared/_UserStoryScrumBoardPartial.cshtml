@@ -1,7 +1,7 @@
 ﻿@model GestionScrumV3.Entity.UserStory
 
 <div class="userStory" userStoryId="@Model.UserStoryId" style="height:auto;width: 185px;">
-    <div class="userStoryHeader" style="padding-bottom: 20px;">
+    <div class="userStoryScrumBoardHeader" style="padding-bottom: 20px;">
         <div class="left">
             <b>@Model.Title</b>
         </div>
@@ -10,7 +10,7 @@
         </div>
     </div>
     <hr style="margin: 0;padding: 0;"/>
-    <div class="userStoryBody">
+    <div class="userStoryScrumBoardBody">
         @Model.Description
         <hr style="margin: 0;padding-bottom: 5px;"/>
         <p>Assigned to : @if(Model.Assigned != null){<span>@Model.Assigned.FirstName @Model.Assigned.LastName</span>}</p>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <hr style="margin: 0;padding: 0;"/>
-    <div class="userStoryFooter" style="padding-top: 3px;">
+    <div class="userStoryScrumBoardFooter" style="padding-top: 3px;">
         <div class="left">
             @Model.Priority
         </div>

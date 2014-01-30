@@ -159,6 +159,11 @@ namespace GestionScrumV3.Controllers
             UserStory userStory = _context.UserStory.Where(x => x.UserStoryId == userStoryId).FirstOrDefault();
             userStory.UserStoryStatusTypeId = _context.UserStoryStatusType.Where(x => x.Name == userStoryStatus).Select(x => x.Id).First();
 
+            if (userStoryStatus == "Done")
+            {
+                userStory.PercentageOfProgress = 100;
+            }
+
             _context.Entry(userStory).State = EntityState.Modified;
             _context.SaveChanges();
 

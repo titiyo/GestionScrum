@@ -155,3 +155,4 @@ C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Org.Mentalis.S
 C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\bin\Mono.Math.xml
 C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.dll
 C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.pdb
+C:\Users\ty\Desktop\GestionSrum\GestionScrumV3\GestionScrumV3\obj\Debug\GestionScrumV3.csprojResolveAssemblyReference.cache
