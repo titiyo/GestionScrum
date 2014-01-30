@@ -9,6 +9,7 @@ namespace GestionScrumV3.Models
 {
     public class UserStoryScrumBoardViewModel
     {
+        [Display(Name = "Users")]
         public List<SelectListItem> Users { get; set; }
         [Display(Name="Assigned to")]
         public int UserId { get; set; }
@@ -16,6 +17,7 @@ namespace GestionScrumV3.Models
         [Display(Name = "Progess in %")]
         public int Progress { get; set; }
 
+        [Display(Name = "User Story Id")]
         public Guid UserStoryId { get; set; }
     }
 }

@@ -12,6 +12,7 @@
     <div class="panel-body">
         <div style="float:left">
             @Html.LabelFor(x=>x.Project.Description)
+            <br />
             @Html.DisplayFor(x=>x.Project.Description)
         </div>
         <div style="float:right;width: 50%;">
@@ -35,7 +36,11 @@
     </div>
 
     <div class="panel panel-default">
-        <div class="panel-heading">@Model.TeamName <span style="float:right">@Html.ActionLink("+++", "AddUserInTeam", "User", new { @TeamId = Model.Project.TeamId }, null)</span> </div>
+        <div class="panel-heading">@Model.TeamName 
+            <span style="float:right">
+                <a href="/User/AddUserInTeam?TeamId=@Model.Project.TeamId"><i class='glyphicon glyphicon-plus-sign'></i></a>
+            </span> 
+        </div>
         <div class="panel-body">
             @if (Model.Users != null)
                 {
@@ -50,7 +55,11 @@
     </div>
 
     <div class="panel panel-default">
-        <div class="panel-heading">User Story <span style="float:right">@Html.ActionLink("+++", "Create", "UserStory", new { @ProjectId = Model.Project.ProjectId }, null)</span></div>
+        <div class="panel-heading">User Story 
+            <span style="float:right">
+                <a href="/UserStory/Create?ProjectId=@Model.Project.ProjectId"><i class='glyphicon glyphicon-plus-sign'></i></a>
+            </span>
+        </div>
         <div class="panel-body">
             @if (Model.UserStories != null)
             {

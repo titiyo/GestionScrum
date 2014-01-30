@@ -6,7 +6,7 @@
             <b>@Model.Title</b>
         </div>
         <div class="right">
-            @Html.ActionLink("Edit", "Edit", "UserStory", new { @userStoryId = Model.UserStoryId}, null) 
+            <a href="/UserStory/Edit?userStoryId=@Model.UserStoryId"><i class="glyphicon glyphicon-edit"></i></a>
         </div>
     </div>
     <hr style="margin: 0;padding: 0;"/>

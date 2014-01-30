@@ -28,15 +28,20 @@
             </nav>
         </div>
     </header>
-    <div class="container bs-docs-container" style="padding-top:70px;">
+    <div class="container bs-docs-container" style="padding-top:70px;min-height:500px;">
         <div style="margin-right: 4%; position: relative; width: 19%; float: left;">
             @RenderSection("resume", required: false)
         </div>
         <div style="position: relative; width: 75%; float: right;">
             @RenderBody()
         </div>
-
     </div>
+    <footer id="footer" class="container" role="contentinfo" style="text-align:center;width: 100%;">
+        <hr />
+        <div class="container">
+            <p> © 2012 - ESGI - Gestion Scrum - Projet Dot .Net</p>
+        </div>
+    </footer>
       
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")

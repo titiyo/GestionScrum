@@ -20,7 +20,9 @@ namespace GestionScrumV3.Models
         [Display(Name = "Phone number")]
         public string PhoneNumber { get; set; }
 
+        [Display(Name = "Team Id")]
         public Guid TeamId { get; set; }
+        [Display(Name = "Project Id")]
         public Guid ProjectId { get; set; }
 
         [Display(Name = "Function")]
@@ -31,7 +33,9 @@ namespace GestionScrumV3.Models
     {
         [Display(Name="User")]
         public string User { get; set; }
+        [Display(Name = "Team Id")]
         public Guid TeamId { get; set; }
+        [Display(Name = "Project Id")]
         public Guid ProjectId { get; set; }
     }
 }
