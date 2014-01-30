@@ -143,15 +143,15 @@ namespace GestionScrumV3.Controllers
 
                 // Create All Meeting
                 // SprintPlanningTime
-                Meeting sprintPlanningTime = new Meeting()
-                {
-                    Id = Guid.NewGuid(),
-                    StartDate = model.StartDate.AddHours(14),
-                    EndDate = model.StartDate.AddHours(14).AddMinutes(model.SprintPlanningTime),
-                    MeetingTypeId = meetingType.Where(x => x.Name == "SprintPlanningTime").FirstOrDefault().Id,
-                    ProjectId = model.Project.ProjectId
-                };
-                _context.Meeting.Add(sprintPlanningTime);
+                //Meeting sprintPlanningTime = new Meeting()
+                //{
+                //    Id = Guid.NewGuid(),
+                //    StartDate = model.StartDate.AddHours(14),
+                //    EndDate = model.StartDate.AddHours(14).AddMinutes(model.SprintPlanningTime),
+                //    MeetingTypeId = meetingType.Where(x => x.Name == "SprintPlanningTime").FirstOrDefault().Id,
+                //    ProjectId = model.Project.ProjectId
+                //};
+                //_context.Meeting.Add(sprintPlanningTime);
 
                 // SprintReviewTime
                 Meeting sprintReviewTime = new Meeting()
@@ -176,7 +176,7 @@ namespace GestionScrumV3.Controllers
                 _context.Meeting.Add(sprintRetrospectiveTime);
 
                 // DailyScrumTime
-                DateTime date = model.StartDate.AddDays(1);
+                DateTime date = model.StartDate;
                 while (date < model.EndDate)
                 {
                     if (WorkingDays.IsWorkingDay(date))
@@ -193,6 +193,15 @@ namespace GestionScrumV3.Controllers
                     }
                     date = date.AddDays(1);
                 }
+
+                _context.ActionLog.Add(new ActionLog()
+                {
+                    CreateDate = DateTime.Now,
+                    LogType = _context.LogType.Where(x => x.Name == "Create Sprint").FirstOrDefault(),
+                    UserId = WebSecurity.CurrentUserId,
+                    ProjectId = ((Project)HttpContext.Application.Get("currentProject")).ProjectId,
+                    ActionLogId = Guid.NewGuid()
+                });
 
                 _context.SaveChanges();
 

@@ -77,9 +77,8 @@ namespace GestionScrumV3.Controllers
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && !WebSecurity.UserExists(model.Login))
             {
-
                 _context.User.Add(new User()
                 {
                     Email = model.Email,
@@ -96,6 +95,12 @@ namespace GestionScrumV3.Controllers
                 WebSecurity.Login(model.Login, model.Password);
                 return RedirectToAction("Index");
             }
+
+            if(WebSecurity.UserExists(model.Login))
+            {
+                ModelState.AddModelError("ExistingLogin", "The login already exist !");
+            }
+
             return View(model);
         }
 

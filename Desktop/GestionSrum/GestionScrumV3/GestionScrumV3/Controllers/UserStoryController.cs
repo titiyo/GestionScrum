@@ -96,6 +96,15 @@ namespace GestionScrumV3.Controllers
                     });
                 }
 
+                _context.ActionLog.Add(new ActionLog()
+                {
+                    CreateDate = DateTime.Now,
+                    LogType = _context.LogType.Where(x => x.Name == "Create User Story").FirstOrDefault(),
+                    UserId = WebSecurity.CurrentUserId,
+                    ProjectId = ((Project)HttpContext.Application.Get("currentProject")).ProjectId,
+                    ActionLogId = Guid.NewGuid()
+                });
+
                 _context.UserStory.Add(userStory);
                 _context.SaveChanges();
 
@@ -209,6 +218,15 @@ namespace GestionScrumV3.Controllers
                 userStory.Priority = model.Priority;
                 userStory.ProjectId = model.ProjectId;
                 userStory.UserStoryId = model.UserStoryId;
+
+                _context.ActionLog.Add(new ActionLog()
+                {
+                    CreateDate = DateTime.Now,
+                    LogType = _context.LogType.Where(x => x.Name == "Edit User Story").FirstOrDefault(),
+                    UserId = WebSecurity.CurrentUserId,
+                    ProjectId = ((Project)HttpContext.Application.Get("currentProject")).ProjectId,
+                    ActionLogId = Guid.NewGuid()
+                });
 
                 _context.Entry(userStory).State = EntityState.Modified;
                 _context.SaveChanges();

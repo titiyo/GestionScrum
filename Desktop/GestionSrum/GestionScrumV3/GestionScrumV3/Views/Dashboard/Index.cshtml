@@ -17,10 +17,10 @@
         </div>
         <div style="float:right;width: 50%;">
             @Html.Label("Last Actions")
-            @foreach(var item in Model.Project.ActionLogs)
+            @foreach(var item in Model.Project.ActionLogs.ToList().OrderBy(x=>x.CreateDate).Take(20))
             {
                 <br />
-                <text>@item.CreateDate (@item.User.LastName @item.User.FirstName) : @item.LogType.Name</text>
+                <text><i>@item.CreateDate (@item.User.LastName @item.User.FirstName) : </i>@item.LogType.Name</text>
             }
         </div>
     </div>

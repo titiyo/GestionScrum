@@ -165,6 +165,15 @@ namespace GestionScrumV3.Controllers
                     CreateDate = DateTime.Now
                 };
 
+                _context.ActionLog.Add(new ActionLog()
+                {
+                    CreateDate = DateTime.Now,
+                    LogType = _context.LogType.Where(x => x.Name == "Edit Project").FirstOrDefault(),
+                    UserId = WebSecurity.CurrentUserId,
+                    ProjectId = project.ProjectId,
+                    ActionLogId = Guid.NewGuid()
+                });
+
                 _context.Entry(project).State = EntityState.Modified;
                 _context.SaveChanges();
 
@@ -175,6 +184,5 @@ namespace GestionScrumV3.Controllers
             }
             return View(o);
         }
-
     }
 }

@@ -63,6 +63,41 @@ namespace GestionScrumV3.DAL
                 Description = "Create the Project"
             });
 
+            context.LogType.Add(new LogType()
+            {
+                LogTypeId = Guid.NewGuid(),
+                Name = "Edit Project",
+                Description = "Edit the Project"
+            });
+
+            context.LogType.Add(new LogType()
+            {
+                LogTypeId = Guid.NewGuid(),
+                Name = "Edit Progress User Story",
+                Description = "Edit Progress User Story"
+            });
+
+            context.LogType.Add(new LogType()
+            {
+                LogTypeId = Guid.NewGuid(),
+                Name = "Create Sprint",
+                Description = "Create Sprint"
+            });
+  
+             context.LogType.Add(new LogType()
+            {
+                LogTypeId = Guid.NewGuid(),
+                Name = "Create User Story",
+                Description = "Create User Story"
+            });
+
+            context.LogType.Add(new LogType()
+            {
+                LogTypeId = Guid.NewGuid(),
+                Name = "Edit User Story",
+                Description = "Edit User Story"
+            });
+            
             // Meeting Type
             context.MeetingType.Add(new MeetingType()
             {

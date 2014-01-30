@@ -85,6 +85,15 @@ namespace GestionScrumV3.Controllers
             userStory.AssignedId = model.UserId;
             userStory.PercentageOfProgress = model.Progress;
 
+            _context.ActionLog.Add(new ActionLog()
+            {
+                CreateDate = DateTime.Now,
+                LogType = _context.LogType.Where(x => x.Name == "Edit Progress User Story").FirstOrDefault(),
+                UserId = WebSecurity.CurrentUserId,
+                ProjectId = ((Project)HttpContext.Application.Get("currentProject")).ProjectId,
+                ActionLogId = Guid.NewGuid()
+            });
+
             _context.Entry(userStory).State = EntityState.Modified;
             _context.SaveChanges();
 
@@ -147,6 +156,15 @@ namespace GestionScrumV3.Controllers
             UserStory userStory = _context.UserStory.Where(x => x.UserStoryId == userStoryId).FirstOrDefault();
             userStory.UserStoryStatusTypeId = _context.UserStoryStatusType.Where(x => x.Name == userStoryStatus).Select(x => x.Id).First();
             userStory.SprintId = sprintId;
+
+            _context.ActionLog.Add(new ActionLog()
+            {
+                CreateDate = DateTime.Now,
+                LogType = _context.LogType.Where(x => x.Name == "Edit Progress User Story").FirstOrDefault(),
+                UserId = WebSecurity.CurrentUserId,
+                ProjectId = ((Project)HttpContext.Application.Get("currentProject")).ProjectId,
+                ActionLogId = Guid.NewGuid()
+            });
 
             _context.Entry(userStory).State = EntityState.Modified;
             _context.SaveChanges();
